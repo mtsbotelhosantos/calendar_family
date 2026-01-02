@@ -1,0 +1,147 @@
+:root {
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --bg: #f8f9fa;
+    --white: #ffffff;
+    --today-bg: #e8f4fd;
+    --niver-tag: #ff7675;
+    --highlight: #ffeaea; /* Vermelho claro para o destaque */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg);
+    margin: 0;
+    color: #2d3436;
+}
+
+header {
+    background: var(--primary);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.tab-btn {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 8px 16px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.tab-btn.active {
+    background: var(--white);
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.tab-content { display: none; padding: 15px; max-width: 600px; margin: 0 auto; }
+.tab-content.active { display: block; }
+
+/* Navegação do Mês */
+.cal-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.month-wrapper { text-align: center; }
+.month-wrapper h2 { margin: 0; font-size: 1.2rem; }
+
+.btn-hoje {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.cal-nav button:not(.btn-hoje) {
+    background: none; border: none; font-size: 1.5rem; cursor: pointer; padding: 10px;
+}
+
+/* Grade do Calendário */
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: #636e72;
+    margin-bottom: 5px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    background: #dfe6e9;
+    border: 1px solid #dfe6e9;
+}
+
+.calendar-day {
+    background: white;
+    min-height: 65px;
+    padding: 4px;
+    position: relative;
+    cursor: pointer;
+}
+
+.calendar-day.empty { background: #f1f2f6; cursor: default; }
+.calendar-day.today { background: var(--today-bg); }
+.calendar-day.selected { border: 2px solid var(--accent) !important; z-index: 5; }
+
+.day-num { font-size: 0.9rem; font-weight: 600; }
+
+.niver-name-micro {
+    display: block; font-size: 0.65rem; background: #ffeaa7;
+    margin-top: 2px; padding: 1px 2px; border-radius: 2px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* Painel de Detalhes */
+.detail-panel {
+    margin-top: 20px; background: white; padding: 15px;
+    border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.detail-panel h3 { margin: 0 0 10px 0; font-size: 1.1rem; color: var(--accent); }
+
+.detail-list { list-style: none; padding: 0; margin: 0; }
+.detail-item {
+    padding: 10px; border-bottom: 1px solid #f1f2f6;
+    display: flex; align-items: center; font-weight: 500;
+}
+.detail-item:last-child { border: none; }
+.detail-item::before { content: "🎂"; margin-right: 10px; }
+
+.placeholder-text { text-align: center; color: #b2bec3; font-style: italic; }
+
+/* Aba Lista e Destaque de Aniversário Hoje */
+.month-group { margin-bottom: 25px; }
+.month-title { border-left: 4px solid var(--accent); padding-left: 10px; color: var(--primary); }
+.list-item {
+    background: white; padding: 12px; margin: 6px 0;
+    border-radius: 8px; display: flex; justify-content: space-between;
+}
+
+.hoje-destaque {
+    background: var(--highlight);
+    border: 1px solid #ff7675;
+    font-weight: bold;
+}
