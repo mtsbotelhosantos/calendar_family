@@ -5,6 +5,7 @@ const aniversariantes = [
     { nome: "Renata", dia: 14, mes: 0 },
     { nome: "Lindolfo 🪽", dia: 15, mes: 0 },
     { nome: "Geisiel", dia: 29, mes: 0 },
+    { nome: "Aylla", dia: 3, mes: 1 },
     { nome: "Erica", dia: 4, mes: 2 },
     { nome: "Beijamira", dia: 20, mes: 2 },
     { nome: "Elizeu", dia: 5, mes: 3 },
@@ -155,4 +156,5 @@ function goToday() {
 }
 
 // Iniciar
+
 renderCalendario();
